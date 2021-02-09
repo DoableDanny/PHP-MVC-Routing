@@ -23,6 +23,4 @@ if($rowCount > 0) {
 }
 
 $title = 'Home';
-require 'views/includes/header.php';
 require 'views/index.view.php';
-require 'views/includes/footer.php';

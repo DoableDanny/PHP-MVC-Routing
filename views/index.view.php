@@ -1,3 +1,5 @@
+<?php require 'views/partials/header.php'; ?>
+
 <ul>
   <li><a href="about">About</a></li>
   <li><a href="contact">Contact</a></li>
@@ -9,3 +11,5 @@
   <li><?php echo $user['name'] ?>, <?php echo $user['email'] ?></li>
 </ul>
 <?php endforeach; ?>
+
+<?php require 'views/partials/footer.php'; ?>

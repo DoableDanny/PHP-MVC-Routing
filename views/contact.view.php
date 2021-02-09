@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require 'views/partials/header.php'; ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $title; ?></title>
-</head>
+<h1>Contact</h1>
+<p>PO: <?php echo $address; ?></p>
 
-<body>
-  <h1>Contact</h1>
-  <p>PO: <?php echo $address; ?></p>
-</body>
-
-</html>
+<?php require 'views/partials/footer.php'; ?>
