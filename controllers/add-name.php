@@ -2,8 +2,12 @@
 
 $name = $_POST['name'];
 
-$app['database']->name = $name;
+if($name !== '') {
+  $app['database']->name = $name;
 
-if($app['database']->save()) {
-  echo "$name successfully saved";
+  if($app['database']->save()) {
+    echo "$name successfully saved";
+  }
+} else {
+  echo "Makesure to type something!";
 }

@@ -4,10 +4,11 @@
 
 $app = [];
 
-require 'core/Router.php';
-require 'core/Request.php';
-require 'core/database/Connection.php';
-require 'core/database/Model.php';
+// The below is not needed because we required autoloader in our entry file (index.php)
+// require 'core/Router.php';
+// require 'core/Request.php';
+// require 'core/database/Connection.php';
+// require 'core/database/Model.php';
 
 $database = new Database();
 $db = $database->connect();
