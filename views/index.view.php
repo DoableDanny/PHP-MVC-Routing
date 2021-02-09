@@ -10,7 +10,7 @@
 <h4>Our users</h4>
 <?php foreach($users_arr['data'] as $user) : ?>
 <ul>
-  <li><?php echo $user['name'] ?>, <?php echo $user['email'] ?></li>
+  <li><?php echo htmlspecialchars($user['name']) ?>, <?php echo htmlspecialchars($user['email']) ?></li>
 </ul>
 <?php endforeach; ?>
 
