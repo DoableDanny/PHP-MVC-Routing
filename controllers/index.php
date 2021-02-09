@@ -8,7 +8,7 @@ $rowCount = $result->rowCount();
 
 if($rowCount > 0) {
   $users_arr = [];
-  $users_arr['data'] = $users_arr;
+  $users_arr['data'] = $users_arr; // ['data' => []]
 
   while($row = $result->fetch(PDO::FETCH_ASSOC)) {
     extract($row);
