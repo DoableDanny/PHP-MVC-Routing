@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /del_this/
+    RewriteRule ^.*$ index.php [END]
+</IfModule>
