@@ -9,8 +9,3 @@
 </head>
 
 <body>
-  <h1>Contact</h1>
-  <p>PO: <?php echo $address; ?></p>
-</body>
-
-</html>

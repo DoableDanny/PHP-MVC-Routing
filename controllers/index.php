@@ -1,6 +1,6 @@
 <?php
 
-// Controller will interact with the database, get whatever it needs then defers to a view.
+// Controller will ask the model to do something (e.g. get data), do whatever it needs then defers to a view.
 
 $result = $model->readAll();
 
@@ -22,4 +22,7 @@ if($rowCount > 0) {
   }
 }
 
+$title = 'Home';
+require 'views/includes/header.php';
 require 'views/index.view.php';
+require 'views/includes/footer.php';
