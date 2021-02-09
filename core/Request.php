@@ -11,8 +11,14 @@ class Request {
       $uri = str_replace('/mvc_routing_proj/' , '', $uri, $count);
     };
 
-    $uri = trim($uri, '/');
-    
+    // php url path e.g. www.google.com/search?query=best+games => /search
+    $uri = trim(parse_url($uri, PHP_URL_PATH), '/');
+
     return $uri;
+  }
+
+  // GET or POST?
+  public static function method() {
+    return $_SERVER['REQUEST_METHOD'];
   }
 }

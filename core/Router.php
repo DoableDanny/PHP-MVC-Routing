@@ -1,7 +1,10 @@
 <?php
 
 class Router {
-  protected $routes = [];
+  protected $routes = [
+    'GET' => [],
+    'POST' => []
+  ];
 
   // A static function is not an instance method. It's kinda like a global method that can be called at any time.
   public static function load($file) {
@@ -15,13 +18,19 @@ class Router {
     return $router;
   }
 
-  public function define($routes) {
-    $this->routes = $routes;
+  // Defining get request routes
+  public function get($uri, $controller) {
+    $this->routes['GET'][$uri] = $controller;
   }
 
-  public function direct($uri) {
-    if(array_key_exists($uri, $this->routes)) {
-      return $this->routes[$uri];
+  // Defining post request routes
+  public function post($uri, $controller) {
+    $this->routes['POST'][$uri] = $controller;
+  }
+
+  public function direct($uri, $requestType) {
+    if(array_key_exists($uri, $this->routes[$requestType])) {
+      return $this->routes[$requestType][$uri]; // return the controller associated with that uri
     }
 
     throw new Exception('No route defined for this URI');

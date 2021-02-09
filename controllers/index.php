@@ -2,7 +2,7 @@
 
 // Controller will ask the model to do something (e.g. get data), do whatever it needs then defers to a view.
 
-$result = $model->readAll();
+$result = $app['database']->readAll();
 
 $rowCount = $result->rowCount();
 
