@@ -8,7 +8,7 @@ class Request {
     // For development only
     if($_SERVER['HTTP_HOST'] === 'localhost') {
       $count = 1;
-      $uri = str_replace('/del_this/' , '', $uri, $count);
+      $uri = str_replace('/mvc_routing_proj/' , '', $uri, $count);
     };
 
     $uri = trim($uri, '/');
