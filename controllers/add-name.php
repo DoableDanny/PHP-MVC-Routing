@@ -1,6 +1,6 @@
 <?php
 
-$name = $_POST['name'];
+$name = trim($_POST['name']);
 
 if($name !== '') {
   $app['database']->name = $name;
