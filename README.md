@@ -1,9 +1,11 @@
 # PHP MVC-style Routing Project
 
+Handles GET and POST requests.
+
 ### To use
 
 1. Add database config vars to core/Connection.php
-2. In .htaccess, change RewriteBase to your project name e.g. localhost/projectname. RewriteRule filename is the entry file all requests go to.
+2. In .htaccess, change RewriteBase to your project name e.g. localhost/projectname. RewriteRule filename is the entry file ALL requests first go to.
 
 ### MVC
 
