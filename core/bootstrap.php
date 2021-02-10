@@ -18,3 +18,13 @@ App::bind('database', new Model($db));
 
 // A DI Container is better than the below cus a simple array could easily be accidentally overwritten in our program.
 // $app['database'] = new Model($db);
+
+// A helper function used in PagesController.
+function view($name, $data = []) {
+  extract($data);
+  return require "views/{$name}.view.php";
+}
+
+function redirect($path) {
+  header("Location: /{$path}");
+}

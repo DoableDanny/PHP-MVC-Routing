@@ -29,10 +29,27 @@ class Router {
   }
 
   public function direct($uri, $requestType) {
+    
     if(array_key_exists($uri, $this->routes[$requestType])) {
-      return $this->routes[$requestType][$uri]; // return the controller associated with that uri
+     
+      // ... = "splat operater", spreads the elements of the exploded array arguments. e.g. explode('@', 'PagesController@home') => ['PagesController', 'home'].
+      return $this->callAction(
+        ...explode('@', $this->routes[$requestType][$uri])
+      );
     }
 
     throw new Exception('No route defined for this URI');
+  }
+
+  // Protected cus it want need to be called outside of this class or object. PagesController@home => $controller = PagesController, $action = home.
+  protected function callAction($controller, $action) {
+
+    $controller = new $controller();
+
+    if(!method_exists($controller, $action)) {
+      throw new Exception("{$controller} does not respond to the {$action} action.");
+    }
+
+    return $controller->$action();
   }
 }
