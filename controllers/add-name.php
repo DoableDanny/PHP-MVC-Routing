@@ -3,9 +3,10 @@
 $name = trim($_POST['name']);
 
 if($name !== '') {
-  $app['database']->name = $name;
+  $database = App::get('database');
+  $database->name = $name;
 
-  if($app['database']->save()) {
+  if($database->save()) {
     echo "$name successfully saved";
   }
 } else {
