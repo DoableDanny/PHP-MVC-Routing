@@ -1,4 +1,4 @@
-<?php require 'views/partials/header.php'; ?>
+<?php require 'app/views/partials/header.php'; ?>
 
 <ul>
   <li><a href="about">About</a></li>
@@ -10,4 +10,4 @@
 <h1>Welcome</h1>
 
 
-<?php require 'views/partials/footer.php'; ?>
+<?php require 'app/views/partials/footer.php'; ?>

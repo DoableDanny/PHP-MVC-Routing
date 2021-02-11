@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class Router {
   protected $routes = [
     'GET' => [],
@@ -12,7 +14,7 @@ class Router {
     $router = new static;
 
     // Define our routes.
-    require $file;
+    require "{$file}";
     
     // Return the instance. We can't just return "$this" cus static methods don't have access to "$this".
     return $router;
@@ -44,6 +46,8 @@ class Router {
   // Protected cus it want need to be called outside of this class or object. PagesController@home => $controller = PagesController, $action = home.
   protected function callAction($controller, $action) {
 
+    // \\ = escape the backslash
+    $controller = "App\\Controllers\\{$controller}";
     $controller = new $controller();
 
     if(!method_exists($controller, $action)) {

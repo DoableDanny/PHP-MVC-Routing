@@ -8,6 +8,8 @@
 // require 'core/database/Connection.php';
 // require 'core/database/Model.php';
 
+use App\Core\App;
+
 $database = new Database();
 
 $db = $database->connect();
@@ -22,7 +24,7 @@ App::bind('database', new Model($db));
 // A helper function used in PagesController.
 function view($name, $data = []) {
   extract($data);
-  return require "views/{$name}.view.php";
+  return require "app/views/{$name}.view.php";
 }
 
 function redirect($path) {

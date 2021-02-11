@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class Request {
   // Get our uri e.g. /about/
   public static function uri() {

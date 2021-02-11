@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Core;
+
 // Our Dependency Injection Container(we inject our useful dependencies in here e.g. config vars and database so they are accessible through app and can't be easily overwritten like if it was stored in an array)
 class App {
 

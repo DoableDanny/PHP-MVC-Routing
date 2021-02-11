@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\App;
+
 class UsersController {
   
   public function index($successMsg = '') {
@@ -11,7 +15,7 @@ class UsersController {
       $users = [];
       $users['data'] = $users; // ['data' => []]
 
-      while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+      while($row = $result->fetch(\PDO::FETCH_ASSOC)) {
         extract($row);
 
         $user = [
